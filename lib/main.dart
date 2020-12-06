@@ -1,6 +1,7 @@
 import 'package:FirestoreCRUDApp/providers/product_provider.dart';
 import 'package:FirestoreCRUDApp/screens/product_screen.dart';
 import 'package:FirestoreCRUDApp/services/firestore_service.dart';
+import 'package:FirestoreCRUDApp/utils/PushNotificationManager.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -11,6 +12,9 @@ void main() async {
 
   // initial firebase
   await Firebase.initializeApp();
+
+  // initial firebaseMessenger
+  PushNotificationManager().initFirebaseMessaging();
 
   runApp(MyApp());
 
